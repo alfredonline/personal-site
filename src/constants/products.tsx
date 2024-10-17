@@ -119,4 +119,40 @@ export const products = [
       </div>
     ),
   },
+  {
+    href: "https://www.generatelessonplans.com",
+    title: "Generate Lesson Plans",
+    description:
+      "Generate lesson plans for teachers to use in their classrooms. Users can subscribe to produce lesson plans based on their specific needs whereas free users have to select from a predefined list of topics.   ",
+    thumbnail:
+      "https://res.cloudinary.com/damqrrryq/image/upload/v1729170697/Screenshot_2024-10-17_145758_q4y2b3.png",
+    images: [
+      "https://res.cloudinary.com/damqrrryq/image/upload/v1729170747/Screenshot_2024-10-17_151211_yvhxpv.png",
+      "https://res.cloudinary.com/damqrrryq/image/upload/v1729170697/Screenshot_2024-10-17_145758_q4y2b3.png",
+      "https://res.cloudinary.com/damqrrryq/image/upload/v1729170813/Screenshot_2024-10-17_151321_mhqyoi.png",
+    ],
+    stack: [
+      "Nextjs",
+      "Tailwindcss",
+      "Shadcn",
+      "PostgreSQL",
+      "OpenAI",
+      "Stripe",
+    ],
+    slug: "generate-lesson-plans",
+    content: (
+      <div>
+        <p>
+          Generate Lesson Plans is a tool designed to streamline the lesson planning process for educators. 
+          Subscribers can create customized plans tailored to their specific needs, while free users can 
+          access a curated list of pre-defined topics. This micro-SaaS solution offers a simple, 
+          affordable alternative to more complex tools on the market.
+        </p>
+        <p>
+          By automating the creation of lesson plans, this tool helps teachers save time and energy, 
+          allowing them to focus more on classroom instruction and student engagement.
+        </p>
+      </div>
+    ),
+  },
 ];

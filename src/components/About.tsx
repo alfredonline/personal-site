@@ -13,17 +13,8 @@ export default function About() {
           experience with Next.js, React, Node.js / Express, MongoDB,
           PostgreSQL, Typescript, Git, and some Go. I also have a{" "}
           <a href="https://www.youtube.com/@AlfieWebDev">YouTube Channel</a>{" "}
-          where I post coding-related videos.
+          where I post videos about web development.
         </Paragraph>
-
-        {/* <Paragraph className=" mt-4">
-          My latest project is Lingjo, a language learning platform with a focus
-          on exam preparation for language exams. There is truly no other
-          platform like it. It uses AI to grade the speaking and writing
-          abilities of users and marks them against the exam criteria for the
-          exam they are preparing for. It is a unique project which has many
-          users who use it to improve their language skills.
-        </Paragraph> */}
         <Paragraph className=" mt-4">
           I built YouTubeToSlides.com, a client-facing project that allows
           users to convert YouTube videos into presentations that can be used
@@ -33,7 +24,8 @@ export default function About() {
         <Paragraph className="mt-4">
           I also built YouTubeToChapters, a tool for creators to automatically
           generate chapters for their YouTube videos. I built it for myself and
-          my channel as a lightweight alternative to other tools on the market.
+          my channel as a lightweight alternative to other tools on the market. I am 
+          working on a tonne of new projects that I am excited to share with you.
         </Paragraph>
         <Paragraph className="mt-4">
           If you want to work with me or hire me, please reach out to me via{" "}
