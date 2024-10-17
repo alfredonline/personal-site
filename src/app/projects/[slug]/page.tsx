@@ -21,8 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   } else {
     return {
       title: `Projects | ${NAME}`,
-      description:
-        `${NAME} is a developer, writer and speaker. He is a digital nomad and travels around the world while working remotely.`,
+      description: `${NAME} is a software engineer and bootcamp instructor.`,
     };
   }
 }

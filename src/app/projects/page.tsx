@@ -9,8 +9,7 @@ import { NAME } from "../../../config";
 
 export const metadata: Metadata = {
   title: `Projects | ${NAME}`,
-  description:
-    `${NAME} is a developer, writer and speaker. He is a digital nomad and travels around the world while working remotely.`,
+  description: `${NAME} is a software engineer and bootcamp instructor.`,
 };
 
 export default function Projects() {
