@@ -30,7 +30,7 @@ export async function POST(request: Request) {
 
     sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
     const msg = {
-      to: process.env.RECIPIENT_EMAIL!,
+      to: process.env.MY_EMAIL!,
       from: process.env.MY_EMAIL!,
       subject: "I am interested in your services",
       text: "I am interested in your services",
