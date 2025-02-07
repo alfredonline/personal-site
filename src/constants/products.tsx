@@ -90,36 +90,6 @@ export const products = [
     ),
   },
   {
-    href: "https://youtubetochapters.com",
-    title: "YouTubeToChapters",
-    description:
-      "A tool for creators to automatically generate chapters for their YouTube videos. It is a lightweight alternative to other tools on the market. It is what I would consider a micro SaaS product. Pro users can pay $5 a month to generate up to 40 sets of chapters a month.",
-    thumbnail:
-      "https://res.cloudinary.com/damqrrryq/image/upload/v1727965358/youtube-to-chapters_l7kskn.png",
-    images: [
-      "https://res.cloudinary.com/damqrrryq/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1727279288/yttoslides_vk4f9c.png",
-      "https://res.cloudinary.com/damqrrryq/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1727279288/yttoslides_vk4f9c.png",
-    ],
-    stack: ["Next.js", "Tailwindcss", "OpenAI"],
-    slug: "YoutubeToChapters",
-    content: (
-      <div>
-        <p>
-          YouTubeToChapters is a tool for creators to automatically generate
-          chapters for their YouTube videos. I built it for myself and my
-          channel as a lightweight alternative to other tools on the market.
-          Other creators have also found it useful and have used it to generate
-          video chapters for their videos.
-        </p>
-        <p>
-          It is what I would consider a micro SaaS product. It is a simple tool
-          that solves a problem. There are similar tools on the market, but they
-          are too expensive. YouTubeToChapters is a lightweight alternative.
-        </p>{" "}
-      </div>
-    ),
-  },
-  {
     href: "https://www.generatelessonplans.com",
     title: "Generate Lesson Plans",
     description:
