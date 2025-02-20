@@ -1,4 +1,4 @@
-export const products = [
+export const projects = [
   {
     href: "https://www.youtubetoslides.com",
     title: "YouTubeToSlides",
