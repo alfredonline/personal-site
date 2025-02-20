@@ -1,4 +1,5 @@
 import { Paragraph } from "@/components/Paragraph";
+import Link from "next/link";
 
 export default function About() {
   return (
@@ -23,19 +24,12 @@ export default function About() {
         </Paragraph>
         <Paragraph className="mt-4">
           If you want to work with me or hire me, please reach out to me via{" "}
-          <a
-            href={process.env.NEXT_PUBLIC_EMAIL_URL!}
+          <Link
+            href={"/contact"}
             className="underline text-blue-500"
           >
             email
-          </a>{" "}
-          or on{" "}
-          <a
-            href={process.env.NEXT_PUBLIC_LINKEDIN_URL!}
-            className="underline text-blue-500"
-          >
-            LinkedIn
-          </a>
+          </Link>
           .
         </Paragraph>
       </div>
