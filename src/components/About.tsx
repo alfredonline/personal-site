@@ -22,22 +22,16 @@ export default function About() {
           used it to generate over 200 presentations.
         </Paragraph>
         <Paragraph className="mt-4">
-          I also built YouTubeToChapters, a tool for creators to automatically
-          generate chapters for their YouTube videos. I built it for myself and
-          my channel as a lightweight alternative to other tools on the market. I am 
-          working on a tonne of new projects that I am excited to share with you.
-        </Paragraph>
-        <Paragraph className="mt-4">
           If you want to work with me or hire me, please reach out to me via{" "}
           <a
-            href={process.env.EMAIL_URL!}
+            href={process.env.NEXT_PUBLIC_EMAIL_URL!}
             className="underline text-blue-500"
           >
             email
           </a>{" "}
           or on{" "}
           <a
-            href={process.env.LINKEDIN_URL!}
+            href={process.env.NEXT_PUBLIC_LINKEDIN_URL!}
             className="underline text-blue-500"
           >
             LinkedIn

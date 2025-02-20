@@ -3,7 +3,7 @@ import { navlinks } from "@/constants/navlinks";
 import { Navlink } from "@/types/navlink";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import React, { useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { Heading } from "./Heading";
@@ -32,8 +32,15 @@ export const Sidebar = () => {
               <SidebarHeader />
               <Navigation setOpen={setOpen} />
             </div>
-            <div onClick={() => isMobile() && setOpen(false)}>
-              <Badge href="https://www.youtube.com/@AlfieWebDev?sub_confirmation=1" text="YouTube Channel" />
+            <div onClick={() => isMobile() && setOpen(false)} className="mb-4">
+              <Badge href="https://www.youtube.com/@AlfieWebDev?sub_confirmation=1" text="YouTube Channel" 
+                className="bg-red-500"
+              />
+            </div>
+            <div>
+              <Badge href="https://github.com/alfredonline" text="GitHub Profile" 
+              className="w-[160px]"
+              />
             </div>
           </motion.div>
         )}
@@ -86,6 +93,7 @@ export const Navigation = ({
         <Link
           key={link.href}
           href={link.href}
+          target="__blank"
           className={twMerge(
             "text-secondary hover:text-primary transition duration-200 flex items-center space-x-2 py-2 px-2 rounded-md text-sm"
           )}

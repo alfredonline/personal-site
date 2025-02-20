@@ -1,6 +1,4 @@
-import { StaticImageData } from "next/image";
-
-export type Product = {
+export type Project = {
   title: string;
   description: string;
   thumbnail: string;

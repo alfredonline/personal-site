@@ -2,7 +2,7 @@ import { Container } from "@/components/Container";
 import { Heading } from "@/components/Heading";
 import { Highlight } from "@/components/Highlight";
 import { Paragraph } from "@/components/Paragraph";
-import { Products } from "@/components/Products";
+import { ProjectsPage } from "@/components/Projects";
 import { NAME } from "../../config";
 
 export default function Home() {
@@ -28,7 +28,7 @@ export default function Home() {
       >
         Here are some products I have built recently.
       </Heading>
-      <Products />
+      <ProjectsPage />
     </Container>
   );
 }
