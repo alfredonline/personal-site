@@ -10,6 +10,28 @@ export const SingleProject = ({ project }: { project: Project }) => {
   const [activeImage, setActiveImage] = useState<StaticImageData | string>(
     project.thumbnail
   );
+
+  // Render the content paragraphs
+  const renderContent = () => {
+    if (!project.content) return null;
+    
+    // If content is an object with paragraph1 and paragraph2
+    if (typeof project.content === 'object' && 'paragraph1' in project.content) {
+      const content = project.content as { paragraph1: string; paragraph2: string };
+      return (
+        <>
+          <Paragraph className="mt-4">{content.paragraph1}</Paragraph>
+          {content.paragraph2 && (
+            <Paragraph className="mt-4">{content.paragraph2}</Paragraph>
+          )}
+        </>
+      );
+    }
+    
+    // If content is a string or ReactNode
+    return project.content;
+  };
+
   return (
     <div className="py-10">
       <motion.div
@@ -29,53 +51,60 @@ export const SingleProject = ({ project }: { project: Project }) => {
       >
         <Image
           src={activeImage}
-          alt="thumbnail"
-          height="1000"
-          width="1000"
+          alt={`${project.title} screenshot`}
+          height={1000}
+          width={1000}
           className="rounded-md object-contain"
         />
         <div className="absolute bottom-0 bg-white h-40 w-full [mask-image:linear-gradient(to_bottom,transparent,white)]" />
       </motion.div>
-      <div className="flex flex-row justify-center my-8 flex-wrap">
-        {project.images.map((image, idx) => (
-          <button
-            onClick={() => setActiveImage(image)}
-            key={`image-thumbnail-${idx}`}
-          >
-            <Image
-              src={image}
-              alt="product thumbnail"
-              height="1000"
-              width="1000"
-              className="h-14 w-16 md:h-40 md:w-60 object-cover object-top mr-4 mb-r border rounded-lg border-neutral-100"
-            />
-          </button>
-        ))}
-      </div>
-      <div className="flex flex-col items-center mt-20">
-        <Heading className="font-black mb-2 pb-1"> {    project.title}</Heading>
-        <div className="flex space-x-2 md:mb-1 mt-2 md:mt-0">
+      
+      {project.images.length > 0 && (
+        <div className="flex flex-row justify-center my-8 flex-wrap">
+          {project.images.map((image, idx) => (
+            <button
+              onClick={() => setActiveImage(image)}
+              key={`image-thumbnail-${idx}`}
+            >
+              <Image
+                src={image}
+                alt={`${project.title} thumbnail ${idx + 1}`}
+                height={1000}
+                width={1000}
+                className="h-14 w-16 md:h-40 md:w-60 object-cover object-top mr-4 mb-4 border rounded-lg border-neutral-100"
+              />
+            </button>
+          ))}
+        </div>
+      )}
+      
+      <div>
+        <Heading className="font-black mb-2 pb-1">{project.title}</Heading>
+        <div className="flex flex-wrap gap-2 md:mb-1 mt-2 md:mt-0">
           {project.stack?.map((stack: string) => (
             <span
               key={stack}
-              className="text-xs  md:text-xs lg:text-xs bg-gray-50 px-2 py-1 rounded-sm text-secondary"
+              className="text-xs md:text-xs lg:text-xs bg-gray-50 px-2 py-1 rounded-sm text-secondary"
             >
               {stack}
             </span>
           ))}
         </div>
       </div>
+
       <div>
         <Paragraph className="max-w-xl mt-4">{project.description}</Paragraph>
       </div>
-      <div className="prose prose-sm md:prose-base max-w-none text-neutral-600">
-        {project?.content}
+
+      <div className="prose prose-sm md:prose-base max-w-none text-neutral-600 mt-4">
+        {renderContent()}
       </div>
 
       <a
         href={project.href}
-        target="__blank"
-        className="inline-flex items-center gap-1 group/button rounded-full hover:scale-105 focus:outline-none transition ring-offset-gray-900 bg-gray-800 text-white shadow-lg shadow-black/20 sm:backdrop-blur-sm group-hover/button:bg-gray-50/15 group-hover/button:scale-105 focus-visible:ring-1 focus-visible:ring-offset-2 ring-gray-50/60 text-sm font-medium px-4 py-2 mt-auto origin-left"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-flex items-center gap-1 group/button rounded-full hover:scale-105 focus:outline-none transition ring-offset-gray-900 bg-gray-800 text-white shadow-lg shadow-black/20 sm:backdrop-blur-sm group-hover/button:bg-gray-50/15 group-hover/button:scale-105 focus-visible:ring-1 focus-visible:ring-offset-2 ring-gray-50/60 text-sm font-medium px-4 py-2 mt-6 origin-left"
       >
         View live site
         <svg
@@ -85,9 +114,9 @@ export const SingleProject = ({ project }: { project: Project }) => {
           viewBox="0 0 24 24"
           fill="none"
           stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
           className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform"
         >
           <path d="M5 12l14 0"></path>

@@ -1,9 +1,10 @@
+import { translations } from './translations';
+
 export const projects = [
   {
     href: "https://www.youtubetoslides.com",
-    title: "YouTubeToSlides",
-    description:
-      "Convert YouTube videos into presentations for educational purposes. Users can purchase gems to generate presentations. So far users from all over the world have generated over 200 presentations and the generated slides have been used by real teachers in real schools.  ",
+    title: translations.en.projects.youtubeToSlides.title,
+    description: translations.en.projects.youtubeToSlides.description,
     thumbnail:
       "https://res.cloudinary.com/damqrrryq/image/upload/v1727964836/youtube-to-slides_uuecan.png",
     images: [
@@ -23,18 +24,8 @@ export const projects = [
     slug: "youtube-to-slides",
     content: (
       <div>
-        <p>
-          YouTubeToSlides is a tool that allows users to convert YouTube videos
-          into presentations that can be used for educational purposes. I
-          designed it with educators in mind, who want to create presentations
-          for their students based on YouTube videos. Users can generate videos
-          up to 20 minutes long and can purchase gems.
-        </p>
-        <p>
-          There are many customers who are satisfied with the product and have
-          used it to generate presentations for their students. The product is
-          designed to be easy to use and user-friendly.{" "}
-        </p>{" "}
+        <p>{translations.en.projects.youtubeToSlides.content.paragraph1}</p>
+        <p>{translations.en.projects.youtubeToSlides.content.paragraph2}</p>
       </div>
     ),
   },

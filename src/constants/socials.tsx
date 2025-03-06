@@ -11,7 +11,7 @@ export const socials = [
     icon: IconBrandX,
   },
   {
-    href: "www.linkedin.com/in/alfie-f-39ba19264",
+    href: "https://www.linkedin.com/in/alfie-f-39ba19264",
     label: "LinkedIn",
     icon: IconBrandLinkedin,
   },

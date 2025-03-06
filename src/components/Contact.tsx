@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
 
 const defaultFormState = {
   name: {
@@ -15,10 +16,12 @@ const defaultFormState = {
     error: "",
   },
 };
+
 export const Contact = () => {
   const [formData, setFormData] = useState(defaultFormState);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+  const { t } = useLanguage();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -57,7 +60,7 @@ export const Contact = () => {
       <div className="flex flex-col md:flex-row justify-between gap-5">
         <input
           type="text"
-          placeholder="Your Name"
+          placeholder={t('your_name')}
           className="bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 px-2 py-2 rounded-md text-sm text-neutral-700 w-full"
           value={formData.name.value}
           onChange={(e) => {
@@ -72,7 +75,7 @@ export const Contact = () => {
         />
         <input
           type="email"
-          placeholder="Your email address"
+          placeholder={t('your_email')}
           className="bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 px-2 py-2 rounded-md text-sm text-neutral-700 w-full"
           value={formData.email.value}
           onChange={(e) => {
@@ -88,7 +91,7 @@ export const Contact = () => {
       </div>
       <div>
         <textarea
-          placeholder="Your Message"
+          placeholder={t('your_message')}
           rows={10}
           className="bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 px-2 mt-4 py-2 rounded-md text-sm text-neutral-700 w-full"
           value={formData.message.value}
@@ -108,8 +111,9 @@ export const Contact = () => {
         type="submit"
         disabled={isSubmitting}
       >
-        {isSubmitting ? 'Sending...' : 'Submit'}
+        {isSubmitting ? t('sending') : t('submit')}
       </button>
+      
       {submitMessage && (
         <p className={`mt-2 text-sm ${submitMessage.includes('successfully') ? 'text-green-600' : 'text-red-600'}`}>
           {submitMessage}
