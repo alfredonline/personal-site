@@ -1,32 +1,33 @@
+"use client";
 import { Container } from "@/components/Container";
 import { Heading } from "@/components/Heading";
 import { Highlight } from "@/components/Highlight";
 import { Paragraph } from "@/components/Paragraph";
 import { ProjectsPage } from "@/components/Projects";
 import { NAME } from "../../config";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Home() {
+  const { t } = useLanguage();
+  
   return (
     <Container>
       <Heading className="font-black">
-        <span className="font-normal text-yellow-500">👋</span>My name is {NAME}
+        <span className="font-normal text-yellow-500">👋</span>{t('greeting')} {NAME}
       </Heading>
       <Paragraph className="max-w-xl mt-4">
-        I&apos;m a full-stack software engineer that enjoys{" "}
-        <Highlight>building useful</Highlight> products in the education sector
-        as well as micro SaaS products for creators.
+        {t('intro')}{" "}
+        <Highlight>{t('building_useful')}</Highlight> {t('products_description')}
       </Paragraph>
       <Paragraph className="max-w-xl mt-4">
-        I have 2 years of commercial experience working as a{" "}
-        <Highlight>full-stack engineer</Highlight> and bootcamp instructor. I
-        have tonnes of experience working with Next.js, React, Node.js /
-        Express, MongoDB, PostgreSQL, Typescript, Git, and some Go.
+        {t('experience')}{" "}
+        <Highlight>{t('full_stack_engineer')}</Highlight> {t('and_instructor')}
       </Paragraph>
       <Heading
         as="h2"
         className="font-black text-lg md:text-lg lg:text-lg mt-20 mb-4"
       >
-        Here are some products I have built recently.
+        {t('recent_projects')}
       </Heading>
       <ProjectsPage />
     </Container>
