@@ -1,34 +1,33 @@
 import { Paragraph } from "@/components/Paragraph";
 import Link from "next/link";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function About() {
+  const { t } = useLanguage();
+  
   return (
     <div>
       <div className="max-w-4xl">
         <Paragraph className=" mt-4">
-          My name is Alfie. I am a problem solver who enjoys building products
-          that are both functional and aesthetically pleasing.
+          {t('about_intro')}
         </Paragraph>
         <Paragraph className=" mt-4">
-          I work as a full-stack developer and bootcamp instructor. I have
-          experience with Next.js, React, Node.js / Express, MongoDB,
-          PostgreSQL, Typescript, Git, and some Go. I also have a{" "}
-          <a href="https://www.youtube.com/@AlfieWebDev">YouTube Channel</a>{" "}
-          where I post videos about web development.
+          {t('about_work')}{" "}
+          <a href="https://www.youtube.com/@AlfieWebDev" className="underline text-blue-500">
+            {t('youtube_channel')}
+          </a>{" "}
+          {t('about_youtube')}
         </Paragraph>
         <Paragraph className=" mt-4">
-          I built YouTubeToSlides.com, a client-facing project that allows
-          users to convert YouTube videos into presentations that can be used
-          for educational purposes. So far users from all over the world have
-          used it to generate over 200 presentations.
+          {t('about_project')}
         </Paragraph>
         <Paragraph className="mt-4">
-          If you want to work with me or hire me, please reach out to me via{" "}
+          {t('contact_me')}{" "}
           <Link
             href={"/contact"}
             className="underline text-blue-500"
           >
-            email
+            {t('email')}
           </Link>
           .
         </Paragraph>

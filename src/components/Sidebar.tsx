@@ -4,7 +4,7 @@ import { Navlink } from "@/types/navlink";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { twMerge } from "tailwind-merge";
 import { Heading } from "./Heading";
 import { socials } from "@/constants/socials";
@@ -13,43 +13,89 @@ import { AnimatePresence, motion } from "framer-motion";
 import { IconLayoutSidebarRightCollapse } from "@tabler/icons-react";
 import { isMobile } from "@/lib/utils";
 import { NAME } from "../../config";
+import { useLanguage } from "@/context/LanguageContext";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 export const Sidebar = () => {
-  const [open, setOpen] = useState(isMobile() ? false : true);
+  const [open, setOpen] = useState(false);
+  const { t } = useLanguage();
+
+  // Set initial state based on screen size
+  useEffect(() => {
+    setOpen(!isMobile());
+  }, []);
+
+  // Handle resize events
+  useEffect(() => {
+    const handleResize = () => {
+      setOpen(!isMobile());
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   return (
     <>
+      {/* Overlay for mobile */}
+      <AnimatePresence>
+        {open && isMobile() && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setOpen(false)}
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 lg:hidden"
+          />
+        )}
+      </AnimatePresence>
+
+      {/* Sidebar */}
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ x: -200 }}
+            initial={{ x: -300 }}
             animate={{ x: 0 }}
-            transition={{ duration: 0.2, ease: "linear" }}
-            exit={{ x: -200 }}
-            className="px-6  z-[100] py-10 bg-neutral-100 max-w-[14rem] lg:w-fit  fixed lg:relative  h-screen left-0 flex flex-col justify-between"
+            exit={{ x: -300 }}
+            transition={{ type: "spring", damping: 20, stiffness: 300 }}
+            className="fixed lg:sticky top-0 left-0 h-screen z-50 flex flex-col"
           >
-            <div className="flex-1 overflow-auto">
-              <SidebarHeader />
-              <Navigation setOpen={setOpen} />
-            </div>
-            <div onClick={() => isMobile() && setOpen(false)} className="mb-4">
-              <Badge href="https://www.youtube.com/@AlfieWebDev?sub_confirmation=1" text="YouTube Channel" 
-                className="bg-red-500"
-              />
-            </div>
-            <div>
-              <Badge href="https://github.com/alfredonline" text="GitHub Profile" 
-              className="w-[160px]"
-              />
+            <div className="px-6 py-10 bg-neutral-100 w-[14rem] h-full flex flex-col justify-between">
+              <div className="flex-1 overflow-auto">
+                <SidebarHeader />
+                <Navigation setOpen={setOpen} />
+                <div className="mt-4">
+                  <LanguageSwitcher />
+                </div>
+              </div>
+              <div className="space-y-2">
+                <Badge 
+                  href="https://www.youtube.com/@AlfieWebDev?sub_confirmation=1" 
+                  text="YouTube Channel" 
+                  className="bg-red-500 w-full"
+                />
+                <Badge 
+                  href="https://github.com/alfredonline" 
+                  text="GitHub Profile" 
+                  className="w-full"
+                />
+              </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+      
+      {/* Toggle button */}
       <button
-        className="fixed lg:hidden bottom-4 right-4 h-8 w-8 border border-neutral-200 rounded-full backdrop-blur-sm flex items-center justify-center z-50"
+        className="fixed lg:hidden bottom-4 right-4 h-10 w-10 bg-white border border-neutral-200 rounded-full backdrop-blur-sm flex items-center justify-center z-50 shadow-lg"
         onClick={() => setOpen(!open)}
       >
-        <IconLayoutSidebarRightCollapse className="h-4 w-4 text-secondary" />
+        <IconLayoutSidebarRightCollapse 
+          className={twMerge(
+            "h-5 w-5 text-secondary transition-transform duration-200",
+            open && "rotate-180"
+          )} 
+        />
       </button>
     </>
   );
@@ -61,6 +107,7 @@ export const Navigation = ({
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
   const pathname = usePathname();
+  const { t } = useLanguage();
 
   const isActive = (href: string) => pathname === href;
 
@@ -82,12 +129,12 @@ export const Navigation = ({
               isActive(link.href) && "text-sky-500"
             )}
           />
-          <span>{link.label}</span>
+          <span>{t(link.label.toLowerCase())}</span>
         </Link>
       ))}
 
       <Heading as="p" className="text-sm md:text-sm lg:text-sm pt-10 px-2">
-        Socials
+        {t('socials')}
       </Heading>
       {socials.map((link: Navlink) => (
         <Link
@@ -112,6 +159,8 @@ export const Navigation = ({
 };
 
 const SidebarHeader = () => {
+  const { t } = useLanguage();
+  
   return (
     <div className="flex space-x-2">
       <Image
@@ -123,7 +172,7 @@ const SidebarHeader = () => {
       />
       <div className="flex text-sm flex-col">
         <p className="font-bold text-primary">{NAME}</p>
-        <p className="font-light text-secondary">Developer</p>
+        <p className="font-light text-secondary">{t('developer')}</p>
       </div>
     </div>
   );
