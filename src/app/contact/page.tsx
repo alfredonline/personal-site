@@ -1,16 +1,8 @@
-"use client";
 import { Contact } from "@/components/Contact";
 import { Container } from "@/components/Container";
 import { Heading } from "@/components/Heading";
 import { Paragraph } from "@/components/Paragraph";
-import { Metadata } from "next";
-import { NAME } from "../../../config";
 import { useLanguage } from "@/context/LanguageContext";
-
-export const metadata: Metadata = {
-  title: `Contact | ${NAME}`,
-  description: `${NAME} is a software engineer and bootcamp instructor.`,
-};
 
 export default function ContactPage() {
   const { t } = useLanguage();
