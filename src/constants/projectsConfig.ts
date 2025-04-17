@@ -55,7 +55,8 @@ export const projectsConfig = {
         "Tailwindcss",
         "PostgreSQL",
         "Shadcn",
-        "Prisma"
+        "Prisma",
+        "Nestjs"
       ],
       category: 'web' as ProjectCategory
     },
