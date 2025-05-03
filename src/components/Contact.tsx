@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { useLanguage } from "@/context/LanguageContext";
 
 const defaultFormState = {
   name: {
@@ -21,7 +20,6 @@ export const Contact = () => {
   const [formData, setFormData] = useState(defaultFormState);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
-  const { t } = useLanguage();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -56,66 +54,76 @@ export const Contact = () => {
   };
 
   return (
-    <form className="form" onSubmit={handleSubmit}>
-      <div className="flex flex-col md:flex-row justify-between gap-5">
+    <form onSubmit={handleSubmit} className="space-y-6">
+      <div>
+        <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+          Your Name
+        </label>
         <input
           type="text"
-          placeholder={t('your_name')}
-          className="bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 px-2 py-2 rounded-md text-sm text-neutral-700 w-full"
+          id="name"
           value={formData.name.value}
-          onChange={(e) => {
+          onChange={(e) =>
             setFormData({
               ...formData,
-              name: {
-                value: e.target.value,
-                error: "",
-              },
-            });
-          }}
+              name: { ...formData.name, value: e.target.value },
+            })
+          }
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
+          required
         />
+      </div>
+
+      <div>
+        <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+          Your Email
+        </label>
         <input
           type="email"
-          placeholder={t('your_email')}
-          className="bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 px-2 py-2 rounded-md text-sm text-neutral-700 w-full"
+          id="email"
           value={formData.email.value}
-          onChange={(e) => {
+          onChange={(e) =>
             setFormData({
               ...formData,
-              email: {
-                value: e.target.value,
-                error: "",
-              },
-            });
-          }}
+              email: { ...formData.email, value: e.target.value },
+            })
+          }
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
+          required
         />
       </div>
+
       <div>
+        <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+          Your Message
+        </label>
         <textarea
-          placeholder={t('your_message')}
-          rows={10}
-          className="bg-neutral-100 focus:outline-none focus:ring-2 focus:ring-neutral-200 px-2 mt-4 py-2 rounded-md text-sm text-neutral-700 w-full"
+          id="message"
           value={formData.message.value}
-          onChange={(e) => {
+          onChange={(e) =>
             setFormData({
               ...formData,
-              message: {
-                value: e.target.value,
-                error: "",
-              },
-            });
-          }}
+              message: { ...formData.message, value: e.target.value },
+            })
+          }
+          rows={4}
+          className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-yellow-500 focus:ring-yellow-500 sm:text-sm"
+          required
         />
       </div>
-      <button
-        className="w-full px-2 py-2 mt-4 bg-neutral-100 rounded-md font-bold text-neutral-500 disabled:opacity-50"
-        type="submit"
-        disabled={isSubmitting}
-      >
-        {isSubmitting ? t('sending') : t('submit')}
-      </button>
-      
+
+      <div>
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="inline-flex justify-center rounded-md border border-transparent bg-black py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"
+        >
+          {isSubmitting ? "Sending..." : "Submit"}
+        </button>
+      </div>
+
       {submitMessage && (
-        <p className={`mt-2 text-sm ${submitMessage.includes('successfully') ? 'text-green-600' : 'text-red-600'}`}>
+        <p className={`text-sm ${submitMessage.includes('successfully') ? 'text-green-600' : 'text-red-600'}`}>
           {submitMessage}
         </p>
       )}

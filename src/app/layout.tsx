@@ -5,9 +5,6 @@ import { Inter } from "next/font/google";
 import { twMerge } from "tailwind-merge";
 import { NAME } from "../../config";
 import { Analytics } from "@vercel/analytics/react"
-import { LanguageProvider } from "@/context/LanguageContext";
-import { translations } from "@/constants/translations";
-
 
 const inter = Inter({
   subsets: ["latin"],
@@ -15,8 +12,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: `${NAME} - ${translations.en.site_title}`,
-  description: `${NAME} ${translations.en.site_description}`,
+  title: `${NAME} - Software engineer`,
+  description: `${NAME} is a software engineer and amateur YouTuber focused on building language learning tools.`,
 };
 
 export default function RootLayout({
@@ -32,15 +29,13 @@ export default function RootLayout({
           "flex antialiased min-h-screen bg-gray-100"
         )}
       >
-        <LanguageProvider>
-          <Sidebar />
-          <div className="flex-1 lg:pl-2 lg:pt-2">
-            <div className="bg-white min-h-screen lg:rounded-tl-xl border border-transparent lg:border-neutral-200">
-              {children}
-            </div>
+        <Sidebar />
+        <div className="flex-1 lg:pl-2 lg:pt-2">
+          <div className="bg-white min-h-screen lg:rounded-tl-xl border border-transparent lg:border-neutral-200">
+            {children}
           </div>
-          <Analytics />
-        </LanguageProvider>
+        </div>
+        <Analytics />
       </body>
     </html>
   );
