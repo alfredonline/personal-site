@@ -1,31 +1,39 @@
-import { translations } from './translations';
+import { projectsConfig } from './projectsConfig';
 
 export const projects = [
   {
-    href: "https://www.youtubetoslides.com",
-    title: translations.en.projects.youtubeToSlides.title,
-    description: translations.en.projects.youtubeToSlides.description,
-    thumbnail:
-      "https://res.cloudinary.com/damqrrryq/image/upload/v1727964836/youtube-to-slides_uuecan.png",
-    images: [
-      "https://res.cloudinary.com/damqrrryq/image/upload/v1727966112/youtube-to-slides-branding-3_ysicua.png",
-      "https://res.cloudinary.com/damqrrryq/image/upload/v1727966113/youtube-to-slides-branding-2_hmkku8.png",
-      "https://res.cloudinary.com/damqrrryq/image/upload/v1727966115/youtube-to-slides-branding-1_z6sqn3.png",
-    ],
-    stack: [
-      "Nextjs",
-      "Tailwindcss",
-      "Shadcn",
-      "PostgreSQL",
-      "OpenAI",
-      "UploadThing",
-      "Stripe",
-    ],
-    slug: "youtube-to-slides",
+    title: projectsConfig.youtubeToSlides.title,
+    description: projectsConfig.youtubeToSlides.description,
+    href: projectsConfig.youtubeToSlides.href,
+    thumbnail: projectsConfig.youtubeToSlides.thumbnail,
     content: (
-      <div>
-        <p>{translations.en.projects.youtubeToSlides.content.paragraph1}</p>
-        <p>{translations.en.projects.youtubeToSlides.content.paragraph2}</p>
+      <div className="space-y-4">
+        <p>{projectsConfig.youtubeToSlides.content.paragraph1}</p>
+        <p>{projectsConfig.youtubeToSlides.content.paragraph2}</p>
+      </div>
+    ),
+  },
+  {
+    title: projectsConfig.linguaTrackr.title,
+    description: projectsConfig.linguaTrackr.description,
+    href: projectsConfig.linguaTrackr.href,
+    thumbnail: projectsConfig.linguaTrackr.thumbnail,
+    content: (
+      <div className="space-y-4">
+        <p>{projectsConfig.linguaTrackr.content.paragraph1}</p>
+        <p>{projectsConfig.linguaTrackr.content.paragraph2}</p>
+      </div>
+    ),
+  },
+  {
+    title: projectsConfig.rustMusicVisualisation.title,
+    description: projectsConfig.rustMusicVisualisation.description,
+    href: projectsConfig.rustMusicVisualisation.href,
+    thumbnail: projectsConfig.rustMusicVisualisation.thumbnail,
+    content: (
+      <div className="space-y-4">
+        <p>{projectsConfig.rustMusicVisualisation.content.paragraph1}</p>
+        <p>{projectsConfig.rustMusicVisualisation.content.paragraph2}</p>
       </div>
     ),
   },
