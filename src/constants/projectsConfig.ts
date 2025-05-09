@@ -31,6 +31,9 @@ export const projectsConfig = {
       paragraph1:
         "Eduviah is a platform for teachers who want to generate resources for their classes with the help of AI. Users can generate lesson plans and worksheets for their classes; I am working on adding new features to the site. ",
     },
+      metrics: {
+      impact: "Eduviah has helped teachers save time planning lessons by using AI to generate high quality resources",
+    }
   },
   linguaTrackr: {
     href: "https://www.linguatrackr.com",
@@ -38,7 +41,6 @@ export const projectsConfig = {
       "https://res.cloudinary.com/damqrrryq/image/upload/v1746261904/lt1_o5hvj9.png",
     images: [
       "https://res.cloudinary.com/damqrrryq/image/upload/v1746261904/lt3_tei5bf.png",
-      "https://res.cloudinary.com/damqrrryq/image/upload/v1746261903/lt5_nwrzna.png",
       "https://res.cloudinary.com/damqrrryq/image/upload/v1746261903/lt4_hnjkjr.png",
       "https://res.cloudinary.com/damqrrryq/image/upload/v1746261902/lt2_sab4jb.png",
     ],
@@ -59,6 +61,9 @@ export const projectsConfig = {
         "LinguaTrackr is a tool for language learners who are interested in immersion-based learning. Users can set goals for their languages, as well as track and analyse their progress over time.",
       paragraph2:
         "With Linguatrackr, users can see their study streak, study time, study suggestions and other useful metrics.",
+    },
+    metrics: {
+      impact: "Users have been able to track their progress over time and see their study streak, study time, study suggestions and other useful metrics.",
     },
   },
   youtubeToSlides: {
@@ -88,6 +93,9 @@ export const projectsConfig = {
         "YouTubeToSlides is a tool that allows users to convert YouTube videos into presentations that can be used for educational purposes. I designed it with educators in mind, who want to create presentations for their students based on YouTube videos. Users can generate videos up to 20 minutes long and can purchase gems.",
       paragraph2:
         "There are many customers who are satisfied with the product and have used it to generate presentations for their students. The product is designed to be easy to use and user-friendly.",
+    },
+    metrics: {
+      impact: "Over 500 presentations generated, used in classrooms across 15 countries",
     },
   },
   rustMusicVisualisation: {
