@@ -94,7 +94,7 @@ export const Sidebar = () => {
             <div className="shrink-0 border-t border-neutral-200 px-6 py-6">
               <div className="flex flex-col gap-4">
                 <div className="flex flex-col gap-3">
-                  <Heading className="text-sm font-semibold leading-6 text-gray-900">
+                  <Heading className="text-sm font-medium leading-6 text-gray-900">
                     Socials
                   </Heading>
                   <div className="flex gap-3">
@@ -113,7 +113,7 @@ export const Sidebar = () => {
                   </div>
                 </div>
                 <Badge
-                  text={NAME}
+                  text={"Github"}
                   href="https://github.com/alfredonline"
                 />
               </div>

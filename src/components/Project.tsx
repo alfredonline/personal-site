@@ -100,6 +100,21 @@ export const SingleProject = ({ project }: { project: Project }) => {
         {renderContent()}
       </div>
 
+      {project.metrics && (
+        <div className="mt-8 space-y-6">
+          <Heading as="h3" className="font-black text-lg">Impact</Heading>
+          <div className="grid grid-cols-1 gap-4">
+            {project.metrics.impact && (
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <h4 className="font-semibold text-gray-900">Impact</h4>
+                <p className="text-lg text-gray-700">{project.metrics.impact}</p>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+
       <a
         href={project.href}
         target="_blank"

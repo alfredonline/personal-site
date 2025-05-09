@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React, { useState } from "react";
 
 const defaultFormState = {
@@ -120,6 +121,10 @@ export const Contact = () => {
         >
           {isSubmitting ? "Sending..." : "Submit"}
         </button>
+      </div>
+
+      <div>
+        Alternatively, you can contact me via email at <Link href="mailto:hello@alfiewebdev.com" className="underline text-blue-500">hello@alfiewebdev.com</Link>
       </div>
 
       {submitMessage && (

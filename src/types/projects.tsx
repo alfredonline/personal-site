@@ -11,4 +11,18 @@ export type Project = {
     paragraph1: string;
     paragraph2?: string;
   } | React.ReactNode | string;
+  metrics?: {
+    activeUsers?: number;
+    revenue?: string;
+    impact?: string;
+    testimonials?: Array<{
+      quote: string;
+      author: string;
+      role?: string;
+    }>;
+  };
+  challenges?: Array<{
+    challenge: string;
+    solution: string;
+  }>;
 };
