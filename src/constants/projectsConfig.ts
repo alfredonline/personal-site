@@ -14,6 +14,7 @@ export const projectsConfig = {
     ],
     stack: [
       "Nextjs",
+      "Typescript",
       "Tailwindcss",
       "PostgreSQL",
       "Shadcn",
@@ -47,12 +48,14 @@ export const projectsConfig = {
     ],
     stack: [
       "Nextjs",
+      "Typescript",
       "Tailwindcss",
       "PostgreSQL",
       "Shadcn",
       "Prisma",
       "Nestjs",
-      "Jest"
+      "Jest",
+      "Redis"
     ],
     category: "web" as ProjectCategory,
     title: "LinguaTrackr",
@@ -85,6 +88,7 @@ export const projectsConfig = {
       "OpenAI",
       "UploadThing",
       "Stripe",
+      "Typescript"
     ],
     category: "web" as ProjectCategory,
     title: "YouTubeToSlides",
