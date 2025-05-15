@@ -22,6 +22,7 @@ export const projectsConfig = {
       "OpenAI",
       "UploadThing",
       "Stripe",
+      "Jest"
     ],
     category: "web" as ProjectCategory,
     title: "Eduviah",
@@ -51,6 +52,7 @@ export const projectsConfig = {
       "Shadcn",
       "Prisma",
       "Nestjs",
+      "Jest"
     ],
     category: "web" as ProjectCategory,
     title: "LinguaTrackr",
