@@ -126,7 +126,7 @@ export const Sidebar = () => {
       </AnimatePresence>
       <button
         onClick={() => setOpen(!open)}
-        className="fixed top-4 left-4 z-50 rounded-lg bg-white p-2 text-gray-400 shadow-md hover:bg-yellow-50 hover:text-yellow-600 transition-all duration-200 lg:hidden"
+        className="fixed top-4 right-4 z-50 rounded-lg bg-white p-2 text-gray-400 shadow-md hover:bg-yellow-50 hover:text-yellow-600 transition-all duration-200 lg:hidden"
         aria-label="Toggle sidebar"
       >
         <Menu className="h-6 w-6" aria-hidden="true" />

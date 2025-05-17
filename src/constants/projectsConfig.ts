@@ -31,7 +31,7 @@ export const projectsConfig = {
       "Eduviah is a platform for teachers who want to generate resources for their classes with the help of AI. Users can generate lesson plans and worksheets for their classes; I am working on adding new features to the site.",
     content: {
       paragraph1:
-        "Eduviah is a platform for teachers who want to generate resources for their classes with the help of AI. Users can generate lesson plans and worksheets for their classes; I am working on adding new features to the site. ",
+        "Eduviah is a platform for teachers who want to generate resources for their classes with the help of AI. Users can generate lesson plans and worksheets for their classes; it uses a variety of technologies and I am adding new features actively such as a quiz generator and a chatbot, etc. Pro users get access to 30 generations of each resource type per month and free users can access 5 of each resource type before requiring a payment.",
     },
       metrics: {
       impact: "Eduviah has helped teachers save time planning lessons by using AI to generate high quality resources",

@@ -5,8 +5,15 @@ import React, { useState } from "react";
 import { Heading } from "./Heading";
 import { Paragraph } from "./Paragraph";
 import { motion } from "motion/react";
+import Link from "next/link";
 
-export const SingleProject = ({ project }: { project: Project }) => {
+export const SingleProject = ({
+  project,
+  isGridMode,
+}: {
+  project: Project;
+  isGridMode: boolean;
+}) => {
   const [activeImage, setActiveImage] = useState<StaticImageData | string>(
     project.thumbnail
   );
@@ -21,14 +28,12 @@ export const SingleProject = ({ project }: { project: Project }) => {
       "paragraph1" in project.content
     ) {
       const content = project.content as {
-        paragraph1: string;
-        paragraph2: string;
+        paragraph1?: string;
       };
       return (
         <>
-          <Paragraph className="mt-4">{content.paragraph1}</Paragraph>
-          {content.paragraph2 && (
-            <Paragraph className="mt-4">{content.paragraph2}</Paragraph>
+          {content.paragraph1 && (
+            <Paragraph className="mt-4 text-gray-600">{content.paragraph1}</Paragraph>
           )}
         </>
       );
@@ -38,8 +43,88 @@ export const SingleProject = ({ project }: { project: Project }) => {
     return project.content;
   };
 
+  if (isGridMode) {
+    return (
+      <div className="group relative bg-white rounded-xl shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden h-full flex flex-col">
+        <div className="relative aspect-video">
+          <Image
+            src={activeImage}
+            alt={`${project.title} screenshot`}
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        </div>
+
+        <div className="p-6 flex flex-col flex-grow">
+          <Heading className="font-black mb-3 text-xl">{project.title}</Heading>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.stack?.slice(0, 3).map((stack: string, idx: number) => (
+              <span
+                key={stack + idx}
+                className="text-xs bg-gray-50 px-2 py-1 rounded-sm text-gray-600"
+              >
+                {stack}
+              </span>
+            ))}
+            {project.stack && project.stack.length > 3 && (
+              <span className="text-xs bg-gray-50 px-2 py-1 rounded-sm text-gray-600">
+                +{project.stack.length - 3} more
+              </span>
+            )}
+          </div>
+
+          <Paragraph className="text-sm text-gray-600 line-clamp-3 mb-4">
+            {project.description}
+          </Paragraph>
+
+          {project.metrics?.impact && (
+            <div className="mb-4">
+              <p className="text-sm text-gray-600 line-clamp-2">
+                {project.metrics.impact}
+              </p>
+            </div>
+          )}
+
+          <div className="flex flex-row gap-2 mt-auto">
+            <Link
+              href={`/projects/${project.slug}`}
+              className="inline-flex items-center gap-1 group/button rounded-full hover:scale-105 focus:outline-none transition ring-offset-gray-900 bg-gray-800 text-white shadow-lg shadow-black/20 sm:backdrop-blur-sm group-hover/button:bg-gray-50/15 group-hover/button:scale-105 focus-visible:ring-1 focus-visible:ring-offset-2 ring-gray-50/60 text-sm font-medium px-4 py-2 origin-left"
+            >
+              Full details
+            </Link>
+            <a
+              href={project.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 group/button rounded-full hover:scale-105 focus:outline-none transition border border-gray-200 bg-transparent text-gray-500 hover:bg-gray-50 sm:backdrop-blur-sm group-hover/button:scale-105 focus-visible:ring-1 focus-visible:ring-offset-2 text-sm font-medium px-4 py-2 origin-left"
+            >
+              View live site
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform"
+              >
+                <path d="M5 12l14 0"></path>
+                <path d="M13 18l6 -6"></path>
+                <path d="M13 6l6 6"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className="py-10">
+    <div className="py-8">
       <motion.div
         initial={{
           opacity: 0,
@@ -85,12 +170,12 @@ export const SingleProject = ({ project }: { project: Project }) => {
       )}
 
       <div>
-        <Heading className="font-black mb-2 pb-1">{project.title}</Heading>
-        <div className="flex flex-wrap gap-2 md:mb-1 mt-2 md:mt-0">
+        <Heading className="font-black mb-3 text-2xl">{project.title}</Heading>
+        <div className="flex flex-wrap gap-2 mb-4">
           {project.stack?.map((stack: string, idx: number) => (
             <span
               key={stack + idx}
-              className="text-xs md:text-xs lg:text-xs bg-gray-50 px-2 py-1 rounded-sm text-secondary"
+              className="text-xs bg-gray-50 px-2 py-1 rounded-sm text-gray-600"
             >
               {stack}
             </span>
@@ -99,10 +184,10 @@ export const SingleProject = ({ project }: { project: Project }) => {
       </div>
 
       <div>
-        <Paragraph className="max-w-xl mt-4">{project.description}</Paragraph>
+        <Paragraph className="text-gray-600 mt-4 max-w-3xl">{project.description}</Paragraph>
       </div>
 
-      <div className="prose prose-sm md:prose-base max-w-none text-neutral-600 mt-4">
+      <div className="prose prose-sm md:prose-base max-w-none text-gray-600 mt-6">
         {renderContent()}
       </div>
 
@@ -113,9 +198,9 @@ export const SingleProject = ({ project }: { project: Project }) => {
           </Heading>
           <div className="grid grid-cols-1 gap-4">
             {project.metrics.impact && (
-              <div className="bg-gray-50 p-4 rounded-lg">
-                <h4 className="font-semibold text-gray-900">Impact</h4>
-                <p className="text-lg text-gray-700">
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <h4 className="font-semibold text-gray-900 mb-2">Impact</h4>
+                <p className="text-gray-700">
                   {project.metrics.impact}
                 </p>
               </div>
@@ -128,7 +213,7 @@ export const SingleProject = ({ project }: { project: Project }) => {
         href={project.href}
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-flex items-center gap-1 group/button rounded-full hover:scale-105 focus:outline-none transition ring-offset-gray-900 bg-gray-800 text-white shadow-lg shadow-black/20 sm:backdrop-blur-sm group-hover/button:bg-gray-50/15 group-hover/button:scale-105 focus-visible:ring-1 focus-visible:ring-offset-2 ring-gray-50/60 text-sm font-medium px-4 py-2 mt-6 origin-left"
+        className="inline-flex items-center gap-1 group/button rounded-full hover:scale-105 focus:outline-none transition ring-offset-gray-900 bg-gray-800 text-white shadow-lg shadow-black/20 sm:backdrop-blur-sm group-hover/button:bg-gray-50/15 group-hover/button:scale-105 focus-visible:ring-1 focus-visible:ring-offset-2 ring-gray-50/60 text-sm font-medium px-4 py-2 mt-8 origin-left"
       >
         View live site
         <svg
