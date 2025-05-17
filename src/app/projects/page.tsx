@@ -6,9 +6,9 @@ import { ProjectsPage } from "@/components/Projects";
 export default function Projects() {
   return (
     <Container>
-      <span className="text-4xl">⚡</span>
-      <Heading className="font-black mb-10">
-        What I&apos;ve been working on
+      <Heading className="mb-4 flex items-center gap-2">
+        <span className="text-4xl text-primary">⚡</span>
+        <span className="font-black"> What I&apos;ve been working on</span>
       </Heading>
 
       <ProjectsPage />
