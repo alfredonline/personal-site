@@ -15,10 +15,10 @@ let RateLimit = new Ratelimit({
 
 export async function POST(request: Request) {
   const identifier =
-    headers().get("x-forwarded-for") ||
-    headers().get("x-real-ip") ||
-    headers().get("cf-connecting-ip") ||
-    headers().get("client-ip") ||
+    (await headers()).get("x-forwarded-for") ||
+    (await headers()).get("x-real-ip") ||
+    (await headers()).get("cf-connecting-ip") ||
+    (await headers()).get("client-ip") ||
     "unknown";
   const { success } = await RateLimit.limit(identifier);
   if (!success) {

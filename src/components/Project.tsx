@@ -4,7 +4,7 @@ import Image, { StaticImageData } from "next/image";
 import React, { useState } from "react";
 import { Heading } from "./Heading";
 import { Paragraph } from "./Paragraph";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 
 export const SingleProject = ({ project }: { project: Project }) => {
   const [activeImage, setActiveImage] = useState<StaticImageData | string>(
@@ -14,10 +14,16 @@ export const SingleProject = ({ project }: { project: Project }) => {
   // Render the content paragraphs
   const renderContent = () => {
     if (!project.content) return null;
-    
+
     // If content is an object with paragraph1 and paragraph2
-    if (typeof project.content === 'object' && 'paragraph1' in project.content) {
-      const content = project.content as { paragraph1: string; paragraph2: string };
+    if (
+      typeof project.content === "object" &&
+      "paragraph1" in project.content
+    ) {
+      const content = project.content as {
+        paragraph1: string;
+        paragraph2: string;
+      };
       return (
         <>
           <Paragraph className="mt-4">{content.paragraph1}</Paragraph>
@@ -27,7 +33,7 @@ export const SingleProject = ({ project }: { project: Project }) => {
         </>
       );
     }
-    
+
     // If content is a string or ReactNode
     return project.content;
   };
@@ -36,7 +42,7 @@ export const SingleProject = ({ project }: { project: Project }) => {
     <div className="py-10">
       <motion.div
         initial={{
-          opacity: 0,     
+          opacity: 0,
           y: 30,
         }}
         animate={{
@@ -58,7 +64,7 @@ export const SingleProject = ({ project }: { project: Project }) => {
         />
         <div className="absolute bottom-0 bg-white h-40 w-full [mask-image:linear-gradient(to_bottom,transparent,white)]" />
       </motion.div>
-      
+
       {project.images.length > 0 && (
         <div className="flex flex-row justify-center my-8 flex-wrap">
           {project.images.map((image, idx) => (
@@ -77,13 +83,13 @@ export const SingleProject = ({ project }: { project: Project }) => {
           ))}
         </div>
       )}
-      
+
       <div>
         <Heading className="font-black mb-2 pb-1">{project.title}</Heading>
         <div className="flex flex-wrap gap-2 md:mb-1 mt-2 md:mt-0">
-          {project.stack?.map((stack: string) => (
+          {project.stack?.map((stack: string, idx: number) => (
             <span
-              key={stack}
+              key={stack + idx}
               className="text-xs md:text-xs lg:text-xs bg-gray-50 px-2 py-1 rounded-sm text-secondary"
             >
               {stack}
@@ -102,18 +108,21 @@ export const SingleProject = ({ project }: { project: Project }) => {
 
       {project.metrics && (
         <div className="mt-8 space-y-6">
-          <Heading as="h3" className="font-black text-lg">Impact</Heading>
+          <Heading as="h3" className="font-black text-lg">
+            Impact
+          </Heading>
           <div className="grid grid-cols-1 gap-4">
             {project.metrics.impact && (
               <div className="bg-gray-50 p-4 rounded-lg">
                 <h4 className="font-semibold text-gray-900">Impact</h4>
-                <p className="text-lg text-gray-700">{project.metrics.impact}</p>
+                <p className="text-lg text-gray-700">
+                  {project.metrics.impact}
+                </p>
               </div>
             )}
           </div>
         </div>
       )}
-
 
       <a
         href={project.href}

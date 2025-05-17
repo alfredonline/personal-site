@@ -1,23 +1,19 @@
-import {
-  IconBrandLinkedin,
-  IconBrandX,
-  IconBrandYoutube,
-} from "@tabler/icons-react";
+import { LinkedInIcon, XIcon, YouTubeIcon } from '@/components/icons/SocialIcons';
 
 export const socials = [
   {
     href: "https://x.com/alfiewebdev",
     label: "X",
-    icon: IconBrandX,
+    icon: XIcon,
   },
   {
     href: "https://www.linkedin.com/in/alfie-f-39ba19264",
     label: "LinkedIn",
-    icon: IconBrandLinkedin,
+    icon: LinkedInIcon,
   },
   {
     href: "https://www.youtube.com/@AlfieWebDev",
     label: "YouTube",
-    icon: IconBrandYoutube,
+    icon: YouTubeIcon,
   },
 ];
