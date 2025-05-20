@@ -18,7 +18,7 @@ export default function SingleProjectPage(
     
     return (
       <Container>
-        <SingleProject project={project} />
+        <SingleProject project={project} isGridMode={false}/>
       </Container>
     );
   } catch {
