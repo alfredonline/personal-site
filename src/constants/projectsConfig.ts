@@ -1,50 +1,14 @@
 export type ProjectCategory = "web" | "rust";
 
 export const projectsConfig = {
-  eduviah: {
-    href: "https://www.eduviah.com",
-    thumbnail:
-      "https://res.cloudinary.com/damqrrryq/image/upload/v1746264298/e1_swqalz.png",
-    images: [
-      "https://res.cloudinary.com/damqrrryq/image/upload/v1746264298/e4_vllc4p.png",
-      "https://res.cloudinary.com/damqrrryq/image/upload/v1746264301/e5_meo020.png",
-      "https://res.cloudinary.com/damqrrryq/image/upload/v1746264298/e3_mxfdfz.png",
-      "https://res.cloudinary.com/damqrrryq/image/upload/v1746264298/e2_w6odnk.png",
-      "https://res.cloudinary.com/damqrrryq/image/upload/v1746264298/e1_swqalz.png"
-    ],
-    stack: [
-      "Nextjs",
-      "Typescript",
-      "Tailwindcss",
-      "PostgreSQL",
-      "Shadcn",
-      "Prisma",
-      "Shadcn",
-      "OpenAI",
-      "UploadThing",
-      "Stripe",
-      "Jest"
-    ],
-    category: "web" as ProjectCategory,
-    title: "Eduviah",
-    description:
-      "Eduviah is a platform for teachers who want to generate resources for their classes with the help of AI. Users can generate lesson plans and worksheets for their classes; I am working on adding new features to the site.",
-    content: {
-      paragraph1:
-        "Eduviah is a platform for teachers who want to generate resources for their classes with the help of AI. Users can generate lesson plans and worksheets for their classes; it uses a variety of technologies and I am adding new features actively such as a quiz generator and a chatbot, etc. Pro users get access to 30 generations of each resource type per month and free users can access 5 of each resource type before requiring a payment.",
-    },
-      metrics: {
-      impact: "Eduviah has helped teachers save time planning lessons by using AI to generate high quality resources",
-    }
-  },
   linguaTrackr: {
     href: "https://www.linguatrackr.com",
     thumbnail:
-      "https://res.cloudinary.com/damqrrryq/image/upload/v1746261904/lt1_o5hvj9.png",
+      "https://res.cloudinary.com/damqrrryq/image/upload/v1748685780/lcb1l5sucibxorljndtx.png",
     images: [
-      "https://res.cloudinary.com/damqrrryq/image/upload/v1746261904/lt3_tei5bf.png",
-      "https://res.cloudinary.com/damqrrryq/image/upload/v1746261903/lt4_hnjkjr.png",
-      "https://res.cloudinary.com/damqrrryq/image/upload/v1746261902/lt2_sab4jb.png",
+      "https://res.cloudinary.com/damqrrryq/image/upload/v1748685780/lcb1l5sucibxorljndtx.png",
+      "https://res.cloudinary.com/damqrrryq/image/upload/v1748685779/h5nol0weelvxv0twojdn.png",
+      "https://res.cloudinary.com/damqrrryq/image/upload/v1748685779/u47h27or7sj7idmsdstz.png",
     ],
     stack: [
       "Nextjs",
@@ -55,7 +19,8 @@ export const projectsConfig = {
       "Prisma",
       "Nestjs",
       "Jest",
-      "Redis"
+      "Redis",
+      "Cypress"
     ],
     category: "web" as ProjectCategory,
     title: "LinguaTrackr",
