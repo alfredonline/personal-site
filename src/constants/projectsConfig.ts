@@ -36,41 +36,6 @@ export const projectsConfig = {
       impact: "Users have been able to track their progress over time and see their study streak, study time, study suggestions and other useful metrics.",
     },
   },
-  youtubeToSlides: {
-    href: "https://www.youtubetoslides.com",
-    thumbnail:
-      "https://res.cloudinary.com/damqrrryq/image/upload/v1747711050/yttoslides_lgzic0.png",
-    images: [
-      "https://res.cloudinary.com/damqrrryq/image/upload/v1747711121/yttoslides2_p0msyt.png",
-      "https://res.cloudinary.com/damqrrryq/image/upload/v1747711198/yttoslides3_ksbdgm.png",
-      "https://res.cloudinary.com/damqrrryq/image/upload/v1747711281/yttoslides4_gxwd2m.png",
-    ],
-    stack: [
-      "Nextjs",
-      "Tailwindcss",
-      "Shadcn",
-      "PostgreSQL",
-      "OpenAI API",
-      "UploadThing",
-      "Stripe",
-      "Typescript",
-      "Redis",
-      "Jest",
-    ],
-    category: "web" as ProjectCategory,
-    title: "YouTubeToSlides",
-    description:
-      "Convert YouTube videos into presentations for educational purposes. Users can purchase gems to generate presentations. So far users from all over the world have generated over 1000 presentations and the generated slides have been used by real teachers in real schools.",
-    content: {
-      paragraph1:
-        "YouTubeToSlides is a tool that allows users to convert YouTube videos into presentations that can be used for educational purposes. I designed it with educators in mind, who want to create presentations for their students based on YouTube videos. Users can generate videos up to 30 minutes long and can purchase gems.",
-      paragraph2:
-        "There are many customers who are satisfied with the product and have used it to generate presentations for their students. The product is designed to be easy to use and user-friendly.",
-    },
-    metrics: {
-      impact: "Over 500 presentations generated, used in classrooms across 15 countries",
-    },
-  },
   rustMusicVisualisation: {
     href: "https://github.com/alfredonline/Rust-music-visualisation.git",
     thumbnail:

@@ -2,18 +2,6 @@ import { projectsConfig } from './projectsConfig';
 
 export const projects = [
   {
-    title: projectsConfig.youtubeToSlides.title,
-    description: projectsConfig.youtubeToSlides.description,
-    href: projectsConfig.youtubeToSlides.href,
-    thumbnail: projectsConfig.youtubeToSlides.thumbnail,
-    content: (
-      <div className="space-y-4">
-        <p>{projectsConfig.youtubeToSlides.content.paragraph1}</p>
-        <p>{projectsConfig.youtubeToSlides.content.paragraph2}</p>
-      </div>
-    ),
-  },
-  {
     title: projectsConfig.linguaTrackr.title,
     description: projectsConfig.linguaTrackr.description,
     href: projectsConfig.linguaTrackr.href,
