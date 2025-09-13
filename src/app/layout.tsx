@@ -1,4 +1,4 @@
-import { Sidebar } from "@/components/Sidebar";
+import { Navbar } from "@/components/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
@@ -26,15 +26,13 @@ export default function RootLayout({
       <body
         className={twMerge(
           inter.className,
-          "flex antialiased min-h-screen bg-gray-100"
+          "antialiased min-h-screen bg-gray-50"
         )}
       >
-        <Sidebar />
-        <div className="flex-1 lg:pl-2 lg:pt-2">
-          <div className="bg-white min-h-screen lg:rounded-tl-xl border border-transparent lg:border-neutral-200">
-            {children}
-          </div>
-        </div>
+        <Navbar />
+        <main className="min-h-screen">
+          {children}
+        </main>
         <Analytics />
       </body>
     </html>

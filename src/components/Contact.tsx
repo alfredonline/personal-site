@@ -124,7 +124,7 @@ export const Contact = () => {
       </div>
 
       <div>
-        Alternatively, you can contact me via email at <Link href="mailto:hello@alfiewebdev.com" className="underline text-blue-500">hello@alfiewebdev.com</Link>
+        Alternatively, you can contact me via email at <a href="mailto:hello@alfiewebdev.com" className="underline text-yellow-600 hover:text-yellow-700">hello@alfiewebdev.com</a>
       </div>
 
       {submitMessage && (

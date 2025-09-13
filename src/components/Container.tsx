@@ -1,9 +1,15 @@
 import React from "react";
 
-export const Container = ({ children }: { children: React.ReactNode }) => {
+interface ContainerProps {
+  children: React.ReactNode;
+  className?: string;
+  noPadding?: boolean;
+}
+
+export const Container = ({ children, className = "", noPadding = false }: ContainerProps) => {
   return (
-    <main className={`max-w-4xl w-full mx-auto py-20 px-4 md:px-10`}>
+    <div className={`max-w-6xl w-full mx-auto ${noPadding ? '' : 'px-4 md:px-8'} ${className}`}>
       {children}
-    </main>
+    </div>
   );
 };

@@ -7,22 +7,22 @@ import {
 
 export const navlinks = [
   {
-    href: "/",
-    label: "Home",
-    icon: Bolt,
-  },
-  {
-    href: "/about",
+    href: "#about",
     label: "About",
     icon: MessageSquare,
   },
   {
-    href: "/projects",
+    href: "#projects",
     label: "Projects",
     icon: Briefcase,
   },
   {
-    href: "/contact",
+    href: "#services",
+    label: "Services",
+    icon: Bolt,
+  },
+  {
+    href: "#contact",
     label: "Contact",
     icon: Mail,
   },
