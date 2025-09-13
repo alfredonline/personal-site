@@ -1,5 +1,4 @@
 "use client";
-import Link from "next/link";
 import React, { useState } from "react";
 
 const defaultFormState = {
@@ -56,7 +55,7 @@ export const Contact = () => {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
-      {/* <div>
+      <div>
         <label htmlFor="name" className="block text-sm font-medium text-gray-700">
           Your Name
         </label>
@@ -121,17 +120,17 @@ export const Contact = () => {
         >
           {isSubmitting ? "Sending..." : "Submit"}
         </button>
-      </div> */}
+      </div>
 
       <div>
         You can contact me via email at <a href="mailto:hello@alfiewebdev.com" className="underline text-yellow-600 hover:text-yellow-700">hello@alfiewebdev.com</a>
       </div>
 
-      {/* {submitMessage && (
+      {submitMessage && (
         <p className={`text-sm ${submitMessage.includes('successfully') ? 'text-green-600' : 'text-red-600'}`}>
           {submitMessage}
         </p>
-      )} */}
+      )}
     </form>
   );
 };
