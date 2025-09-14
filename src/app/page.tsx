@@ -133,18 +133,6 @@ export default function Home() {
             Here are some of the language learning tools and educational platforms I&apos;ve built recently.
           </Paragraph>
           <FeaturedProjects />
-          
-          <div className="text-center mt-12">
-            <a
-              href="#projects-full"
-              className="inline-flex items-center gap-2 px-6 py-3 bg-gray-900 text-white font-semibold rounded-lg hover:bg-gray-800 transition-colors duration-200"
-            >
-              View All Projects
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-          </div>
         </Container>
       </div>
 
