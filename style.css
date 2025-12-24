@@ -25,6 +25,45 @@ main {
 .container {
     text-align: center;
     padding: 2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+    position: relative;
+}
+
+.language-toggle {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.25rem;
+    background: #f5f5f5;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 0.25rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.language-toggle:hover {
+    background: #eeeeee;
+    border-color: #d0d0d0;
+}
+
+.lang-option {
+    padding: 0.375rem 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #666666;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.lang-option.active {
+    background: #ffffff;
+    color: #000000;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .profile-picture {
@@ -32,17 +71,50 @@ main {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
+.name {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #000000;
+}
+
+.contact {
+    font-size: 1.125rem;
+    margin-bottom: 0.5rem;
+    color: #000000;
+}
+
+.contact-subtext {
+    font-size: 0.9375rem;
+    color: #666666;
+    margin-bottom: 2.5rem;
+}
+
+.email-link {
+    color: #0066cc;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.email-link:hover {
+    color: #0052a3;
+    text-decoration: underline;
+}
+
 .bio {
     font-size: 1.125rem;
-    line-height: 1.6;
-    margin-bottom: 2rem;
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
     color: #000000;
+    max-width: 100%;
+    text-align: center;
+    padding: 0 1rem;
 }
 
 .bio a {
@@ -82,13 +154,46 @@ main {
 
 /* Responsive design */
 @media (max-width: 768px) {
+    .container {
+        padding: 1.5rem;
+    }
+    
+    .language-toggle {
+        top: 0.75rem;
+        right: 0.75rem;
+        padding: 0.2rem;
+    }
+    
+    .lang-option {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.8125rem;
+    }
+    
     .profile-picture {
         width: 120px;
         height: 120px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .name {
+        font-size: 1.75rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .contact {
+        font-size: 1rem;
+    }
+    
+    .contact-subtext {
+        font-size: 0.875rem;
+        margin-bottom: 2rem;
     }
     
     .bio {
         font-size: 1rem;
+        line-height: 1.7;
+        padding: 0 0.5rem;
+        margin-bottom: 2rem;
     }
     
     .social-links {
