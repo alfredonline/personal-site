@@ -3,41 +3,75 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AlfieWebDev</title>
+    <meta
+      name="description"
+      content="Alfie — software engineer building trading and analytics platforms."
+    />
+    <title>Alfie | Software Engineer</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <main>
       <div class="container">
-        <button class="language-toggle" id="languageToggle" aria-label="Toggle language">
+        <p class="location">
+          <span class="location-pin" aria-hidden="true">📍</span>
+          <span>Bilbao</span>
+        </p>
+
+        <button
+          class="language-toggle"
+          id="languageToggle"
+          type="button"
+          data-translate-aria="lang-toggle"
+          aria-label="Toggle language"
+        >
           <span class="lang-option active" data-lang="en">EN</span>
           <span class="lang-option" data-lang="es">ES</span>
         </button>
-        
-        <img src="pro.jpg" alt="AlfieWebDev" class="profile-picture" />
-        
-        <h1 class="name">Alfie</h1>
-        
-        <p class="contact">
-          <a href="mailto:hello@alfiewebdev.com" class="email-link">hello@alfiewebdev.com</a>
-        </p>
-        <p class="contact-subtext" data-translate="contact-subtext">Get in touch to collaborate or hire me!</p>
 
-        <p class="bio" data-translate="bio">
-          Co-founder of
-          <a href="https://lingjo.com" target="_blank" rel="noopener noreferrer"
-            >Lingjo</a
+        <img src="pro.jpg" alt="Alfie" class="profile-picture" />
+
+        <h1 class="name">Alfie</h1>
+        <p class="tagline" data-translate="tagline">Software Engineer</p>
+
+        <p class="contact">
+          <a href="mailto:hello@alfiewebdev.com" class="email-link"
+            >hello@alfiewebdev.com</a
           >
-          and creator of
-          <a
-            href="https://linguatrackr.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Linguatrackr</a
-          >. I like to use TypeScript, React, Next.js, Tailwind CSS, Go,
-          PostgreSQL, Docker, MongoDB, and similar tools (too many to list).
-          Sometimes Python for data science and machine learning for Lingjo.
         </p>
+        <p class="contact-subtext" data-translate="contact-subtext">
+          Open to collaboration and new opportunities.
+        </p>
+
+        <section class="section" aria-labelledby="work-heading">
+          <h2 class="section-title" id="work-heading" data-translate="work-title">
+            Work
+          </h2>
+          <p data-translate="work-body">
+            I am a software engineer focused on trading platforms and analytics
+            platforms—building reliable systems where performance, data integrity,
+            and clear insight for users matter. I work mainly with TypeScript,
+            React, Next.js, Go, PostgreSQL, and modern deployment tooling.
+          </p>
+        </section>
+
+        <section class="section" aria-labelledby="personal-heading">
+          <h2 class="section-title" id="personal-heading" data-translate="personal-title">
+            Beyond work
+          </h2>
+          <p data-translate="personal-body">
+            In my spare time I enjoy learning languages and staying curious about
+            how people communicate. I built
+            <a
+              href="https://linguatrackr.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Linguatrackr</a
+            >
+            to track that progress. I also reach for Python when exploring data or
+            side projects.
+          </p>
+        </section>
 
         <div class="social-links">
           <a
@@ -46,7 +80,7 @@
             rel="noopener noreferrer"
             aria-label="GitHub"
           >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path
                 d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
               />
@@ -55,60 +89,77 @@
         </div>
       </div>
     </main>
-    
+
     <script>
       const translations = {
         en: {
-          'contact-subtext': 'Get in touch to collaborate or hire me!',
-          'bio': 'Co-founder of <a href="https://lingjo.com" target="_blank" rel="noopener noreferrer">Lingjo</a> and creator of <a href="https://linguatrackr.com" target="_blank" rel="noopener noreferrer">Linguatrackr</a>. I like to use TypeScript, React, Next.js, Tailwind CSS, Go, PostgreSQL, Docker, MongoDB, and similar tools (too many to list). Sometimes Python for data science and machine learning for Lingjo.'
+          'lang-toggle': 'Toggle language',
+          tagline: 'Software Engineer',
+          'contact-subtext': 'Open to collaboration and new opportunities.',
+          'work-title': 'Work',
+          'work-body':
+            'I am a software engineer focused on trading platforms and analytics platforms—building reliable systems where performance, data integrity, and clear insight for users matter. I work mainly with TypeScript, React, Next.js, Go, PostgreSQL, and modern deployment tooling.',
+          'personal-title': 'Beyond work',
+          'personal-body':
+            'In my spare time I enjoy learning languages and staying curious about how people communicate. I built <a href="https://linguatrackr.com" target="_blank" rel="noopener noreferrer">Linguatrackr</a> to track that progress. I also reach for Python when exploring data or side projects.',
         },
         es: {
-          'contact-subtext': '¡Ponte en contacto para colaborar o contratarme!',
-          'bio': 'Cofundador de <a href="https://lingjo.com" target="_blank" rel="noopener noreferrer">Lingjo</a> y creador de <a href="https://linguatrackr.com" target="_blank" rel="noopener noreferrer">Linguatrackr</a>. Me gusta usar TypeScript, React, Next.js, Tailwind CSS, Go, PostgreSQL, Docker, MongoDB y herramientas similares. A veces Python para ciencia de datos y aprendizaje automático para Lingjo.'
-        }
+          'lang-toggle': 'Cambiar idioma',
+          tagline: 'Ingeniero de software',
+          'contact-subtext': 'Abierto a colaborar y a nuevas oportunidades.',
+          'work-title': 'Trabajo',
+          'work-body':
+            'Soy ingeniero de software especializado en plataformas de trading y de analítica: desarrollo sistemas fiables donde el rendimiento, la integridad de los datos y la claridad para el usuario son prioritarios. Trabajo principalmente con TypeScript, React, Next.js, Go, PostgreSQL y herramientas modernas de despliegue.',
+          'personal-title': 'Fuera del trabajo',
+          'personal-body':
+            'En mi tiempo libre me gusta aprender idiomas y seguir curioso sobre cómo nos comunicamos. Creé <a href="https://linguatrackr.com" target="_blank" rel="noopener noreferrer">Linguatrackr</a> para hacer seguimiento de ese progreso. También uso Python cuando exploro datos o proyectos personales.',
+        },
       };
 
-      let currentLang = 'en';
+      const HTML_KEYS = new Set(['personal-body']);
+      const STORAGE_KEY = 'preferred-lang';
+
+      let currentLang = localStorage.getItem(STORAGE_KEY) || 'en';
+      if (!translations[currentLang]) currentLang = 'en';
 
       const toggle = document.getElementById('languageToggle');
       const langOptions = toggle.querySelectorAll('.lang-option');
-      const contactSubtext = document.querySelector('.contact-subtext');
-      const bio = document.querySelector('.bio');
 
       function updateLanguage(lang) {
         currentLang = lang;
-        
-        // Update toggle active state
-        langOptions.forEach(option => {
-          if (option.dataset.lang === lang) {
-            option.classList.add('active');
+        localStorage.setItem(STORAGE_KEY, lang);
+
+        langOptions.forEach((option) => {
+          option.classList.toggle('active', option.dataset.lang === lang);
+        });
+
+        document.documentElement.lang = lang;
+
+        const strings = translations[lang];
+
+        document.querySelectorAll('[data-translate]').forEach((el) => {
+          const key = el.dataset.translate;
+          if (!strings[key]) return;
+          if (HTML_KEYS.has(key)) {
+            el.innerHTML = strings[key];
           } else {
-            option.classList.remove('active');
+            el.textContent = strings[key];
           }
         });
 
-        // Update HTML lang attribute
-        document.documentElement.lang = lang;
-
-        // Update translatable content
-        if (contactSubtext) {
-          contactSubtext.textContent = translations[lang]['contact-subtext'];
-        }
-        
-        if (bio) {
-          bio.innerHTML = translations[lang]['bio'];
-        }
+        document.querySelectorAll('[data-translate-aria]').forEach((el) => {
+          const key = el.dataset.translateAria;
+          if (strings[key]) el.setAttribute('aria-label', strings[key]);
+        });
       }
 
-      // Handle toggle click
       toggle.addEventListener('click', (e) => {
-        const clickedLang = e.target.dataset.lang;
+        const clickedLang = e.target.dataset?.lang;
         if (clickedLang && clickedLang !== currentLang) {
           updateLanguage(clickedLang);
         }
       });
 
-      // Initialize
       updateLanguage(currentLang);
     </script>
   </body>
