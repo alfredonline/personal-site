@@ -5,162 +5,323 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Alfie — software engineer building trading and analytics platforms."
+      content="AlfieWebDev builds educational technology, analytics platforms, internal business tools and AI-powered products."
     />
-    <title>Alfie | Software Engineer</title>
+    <title>AlfieWebDev | Founder &amp; Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main>
-      <div class="container">
-        <p class="location">
-          <span class="location-pin" aria-hidden="true">📍</span>
-          <span>Bilbao</span>
-        </p>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-        <button
-          class="language-toggle"
-          id="languageToggle"
-          type="button"
-          data-translate-aria="lang-toggle"
-          aria-label="Toggle language"
-        >
-          <span class="lang-option active" data-lang="en">EN</span>
-          <span class="lang-option" data-lang="es">ES</span>
-        </button>
+    <header class="site-header">
+      <nav class="nav shell" aria-label="Primary navigation">
+        <a class="brand" href="#top" aria-label="AlfieWebDev home">
+          <span class="brand-mark" aria-hidden="true">AWD</span>
+          <span>AlfieWebDev</span>
+        </a>
 
-        <img src="pro.jpg" alt="Alfie" class="profile-picture" />
+        <div class="nav-links">
+          <a href="#top">Home</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a class="nav-cta" href="mailto:hello@alfiewebdev.com">Get In Touch</a>
+        </div>
+      </nav>
+    </header>
 
-        <h1 class="name">Alfie</h1>
-        <p class="tagline" data-translate="tagline">Software Engineer</p>
-
-        <p class="contact">
-          <a href="mailto:hello@alfiewebdev.com" class="email-link"
-            >hello@alfiewebdev.com</a
-          >
-        </p>
-        <p class="contact-subtext" data-translate="contact-subtext">
-          Open to collaboration and new opportunities.
-        </p>
-
-        <section class="section" aria-labelledby="work-heading">
-          <h2 class="section-title" id="work-heading" data-translate="work-title">
-            Work
-          </h2>
-          <p data-translate="work-body">
-            I am a software engineer focused on trading platforms and analytics
-            platforms—building reliable systems where performance, data integrity,
-            and clear insight for users matter. I work mainly with TypeScript,
-            React, Next.js, Go, PostgreSQL, and modern deployment tooling.
+    <main id="main">
+      <section class="hero section-block shell" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Software Engineer &amp; Founder</p>
+          <h1 id="hero-title">
+            Building software that helps people learn, work and make better
+            decisions.
+          </h1>
+          <p class="hero-subtitle">
+            I&apos;m AlfieWebDev, a software engineer based in Bilbao. I build
+            educational technology, analytics platforms and internal business tools
+            using TypeScript, React, Next.js, PostgreSQL and AI.
           </p>
-        </section>
 
-        <section class="section" aria-labelledby="personal-heading">
-          <h2 class="section-title" id="personal-heading" data-translate="personal-title">
-            Beyond work
-          </h2>
-          <p data-translate="personal-body">
-            In my spare time I enjoy learning languages and staying curious about
-            how people communicate. I built
-            <a
-              href="https://linguatrackr.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Linguatrackr</a
-            >
-            to track that progress. I also reach for Python when exploring data or
-            side projects.
-          </p>
-        </section>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button button-primary" href="#projects">View Projects</a>
+            <a class="button button-secondary" href="mailto:hello@alfiewebdev.com">
+              Get In Touch
+            </a>
+          </div>
+        </div>
 
-        <div class="social-links">
-          <a
-            href="https://github.com/alfredonline"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path
-                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+        <div class="hero-visual" aria-label="Professional headshot area">
+          <div class="portrait-card">
+            <div class="portrait-frame">
+              <img src="assets/headshot.png" alt="AlfieWebDev headshot" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="credibility shell" aria-label="Credibility">
+        <div class="credibility-item">
+          <span class="mini-icon" aria-hidden="true">01</span>
+          <span>Based in Bilbao, Spain</span>
+        </div>
+        <div class="credibility-item">
+          <span class="mini-icon" aria-hidden="true">02</span>
+          <span>Working remotely with global teams</span>
+        </div>
+        <div class="credibility-item">
+          <span class="mini-icon" aria-hidden="true">03</span>
+          <span>Instructor &amp; Mentor</span>
+        </div>
+        <div class="credibility-item">
+          <span class="mini-icon" aria-hidden="true">04</span>
+          <span>Founder &amp; Builder</span>
+        </div>
+      </section>
+
+      <section class="section-block shell" id="projects" aria-labelledby="projects-title">
+        <div class="section-heading">
+          <p class="eyebrow">Selected Projects</p>
+          <div>
+            <h2 id="projects-title">Products I&apos;ve built</h2>
+            <p>
+              Founder-led product work across education, analytics and business
+              workflows.
+            </p>
+          </div>
+        </div>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <div class="project-preview preview-trackr">
+              <img
+                src="https://res.cloudinary.com/damqrrryq/image/upload/v1782059018/Screenshot_2026-06-21_172246_p9gqar.png"
+                alt="LinguaTrackr analytics dashboard screenshot"
+                loading="lazy"
               />
-            </svg>
+            </div>
+            <div class="project-content">
+              <h3>LinguaTrackr</h3>
+              <p>
+                Language learning progress tracking platform with analytics, goals,
+                streaks and personalised insights.
+              </p>
+              <ul class="tag-list" aria-label="Technologies used for LinguaTrackr">
+                <li>Next.js</li>
+                <li>PostgreSQL</li>
+                <li>Clerk</li>
+              </ul>
+              <a class="text-link" href="https://linguatrackr.com" target="_blank" rel="noopener noreferrer">
+                View Product
+              </a>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-preview preview-qwikdeck">
+              <img
+                src="https://res.cloudinary.com/damqrrryq/image/upload/v1779045376/Screenshot_2026-05-17_201534_yh7gns.png"
+                alt="QwikDeck landing page screenshot"
+                loading="lazy"
+              />
+            </div>
+            <div class="project-content">
+              <h3>QwikDeck</h3>
+              <p>
+                UK curriculum-aligned lesson deck generator that helps teachers
+                turn objectives into polished, editable presentations in seconds.
+              </p>
+              <ul class="tag-list" aria-label="Technologies used for QwikDeck">
+                <li>TypeScript</li>
+                <li>Next.js</li>
+                <li>AI</li>
+              </ul>
+              <a class="text-link" href="https://www.qwikdeck.com/" target="_blank" rel="noopener noreferrer">
+                View Product
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block shell split-section" id="experience" aria-labelledby="experience-title">
+        <div class="section-heading compact">
+          <p class="eyebrow">Experience</p>
+          <h2 id="experience-title">My journey</h2>
+        </div>
+
+        <div class="timeline" aria-label="Professional experience timeline">
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <p class="timeline-meta">2023 - Present</p>
+              <h3>Software Engineer</h3>
+              <p>
+                Built analytics platforms and internal systems that turn complex
+                workflows into clear, reliable product experiences.
+              </p>
+              <ul class="impact-list">
+                <li>Designed data-heavy interfaces for faster decision-making.</li>
+                <li>Built reliable TypeScript and PostgreSQL-backed systems.</li>
+                <li>Improved product workflows across education and business tools.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <p class="timeline-meta">2022 - 2023</p>
+              <h3>Developer Academy</h3>
+              <p>
+                Instructor &amp; Software Engineer focused on helping new developers
+                ship real products and understand full-stack systems.
+              </p>
+              <ul class="impact-list">
+                <li>Mentored learners through practical engineering projects.</li>
+                <li>Created educational material around modern web development.</li>
+                <li>Connected technical learning with product-building habits.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section-block shell" id="skills" aria-labelledby="skills-title">
+        <div class="section-heading">
+          <p class="eyebrow">Skills &amp; Technologies</p>
+          <div>
+            <h2 id="skills-title">Tools I use to build</h2>
+            <p>
+              A practical stack for shipping thoughtful, scalable software without
+              unnecessary complexity.
+            </p>
+          </div>
+        </div>
+
+        <div class="skills-grid">
+          <article class="skill-card">
+            <h3>Frontend</h3>
+            <ul>
+              <li>
+                <img class="tech-icon" src="https://cdn.simpleicons.org/react/61DAFB" alt="" loading="lazy" width="16" height="16" />
+                React
+              </li>
+              <li>
+                <img class="tech-icon" src="https://cdn.simpleicons.org/nextdotjs/000000" alt="" loading="lazy" width="16" height="16" />
+                Next.js
+              </li>
+              <li>
+                <img class="tech-icon" src="https://cdn.simpleicons.org/typescript/3178C6" alt="" loading="lazy" width="16" height="16" />
+                TypeScript
+              </li>
+              <li>
+                <img class="tech-icon" src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="" loading="lazy" width="16" height="16" />
+                Tailwind
+              </li>
+            </ul>
+          </article>
+          <article class="skill-card">
+            <h3>Backend</h3>
+            <ul>
+              <li>
+                <img class="tech-icon" src="https://cdn.simpleicons.org/nodedotjs/5FA04E" alt="" loading="lazy" width="16" height="16" />
+                Node.js
+              </li>
+              <li>
+                <img class="tech-icon" src="https://cdn.simpleicons.org/nestjs/E0234E" alt="" loading="lazy" width="16" height="16" />
+                NestJS
+              </li>
+              <li>
+                <img class="tech-icon" src="https://cdn.simpleicons.org/express/000000" alt="" loading="lazy" width="16" height="16" />
+                Express
+              </li>
+              <li>
+                <img class="tech-icon" src="https://cdn.simpleicons.org/go/00ADD8" alt="" loading="lazy" width="16" height="16" />
+                Go
+              </li>
+            </ul>
+          </article>
+          <article class="skill-card">
+            <h3>Data</h3>
+            <ul>
+              <li>
+                <img class="tech-icon" src="https://cdn.simpleicons.org/postgresql/4169E1" alt="" loading="lazy" width="16" height="16" />
+                PostgreSQL
+              </li>
+              <li>
+                <img class="tech-icon" src="https://cdn.simpleicons.org/prisma/2D3748" alt="" loading="lazy" width="16" height="16" />
+                Prisma
+              </li>
+              <li>
+                <img class="tech-icon" src="https://cdn.simpleicons.org/mongodb/47A248" alt="" loading="lazy" width="16" height="16" />
+                MongoDB
+              </li>
+            </ul>
+          </article>
+          <article class="skill-card">
+            <h3>Infrastructure</h3>
+            <ul>
+              <li>
+                <img class="tech-icon" src="https://cdn.simpleicons.org/docker/2496ED" alt="" loading="lazy" width="16" height="16" />
+                Docker
+              </li>
+              <li>
+                <img class="tech-icon" src="https://cdn.simpleicons.org/amazonwebservices/232F3E" alt="" loading="lazy" width="16" height="16" />
+                AWS
+              </li>
+              <li>
+                <img class="tech-icon" src="https://cdn.simpleicons.org/vercel/000000" alt="" loading="lazy" width="16" height="16" />
+                Vercel
+              </li>
+            </ul>
+          </article>
+          <article class="skill-card">
+            <h3>AI</h3>
+            <ul>
+              <li>
+                <img class="tech-icon" src="https://cdn.simpleicons.org/openai/412991" alt="" loading="lazy" width="16" height="16" />
+                OpenAI
+              </li>
+              <li>
+                <span class="tech-icon tech-icon-fallback" aria-hidden="true">AI</span>
+                AI Workflows
+              </li>
+              <li>
+                <span class="tech-icon tech-icon-fallback" aria-hidden="true">R</span>
+                RAG Systems
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-section shell" id="contact" aria-labelledby="contact-title">
+        <div>
+          <p class="eyebrow">Let&apos;s Connect</p>
+          <h2 id="contact-title">
+            Interested in educational technology, internal tools, analytics
+            platforms or AI-powered products? Let&apos;s talk.
+          </h2>
+        </div>
+
+        <div class="contact-links" aria-label="Contact links">
+          <a href="mailto:hello@alfiewebdev.com">hello@alfiewebdev.com</a>
+          <a href="https://github.com/alfredonline" target="_blank" rel="noopener noreferrer">
+            GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/alfie-f-39ba19264/" target="_blank" rel="noopener noreferrer">
+            LinkedIn
           </a>
         </div>
-      </div>
+      </section>
     </main>
-
-    <script>
-      const translations = {
-        en: {
-          'lang-toggle': 'Toggle language',
-          tagline: 'Software Engineer',
-          'contact-subtext': 'Open to collaboration and new opportunities.',
-          'work-title': 'Work',
-          'work-body':
-            'I am a software engineer focused on trading platforms and analytics platforms—building reliable systems where performance, data integrity, and clear insight for users matter. I work mainly with TypeScript, React, Next.js, Go, PostgreSQL, and modern deployment tooling.',
-          'personal-title': 'Beyond work',
-          'personal-body':
-            'In my spare time I enjoy learning languages and staying curious about how people communicate. I built <a href="https://linguatrackr.com" target="_blank" rel="noopener noreferrer">Linguatrackr</a> to track that progress. I also reach for Python when exploring data or side projects.',
-        },
-        es: {
-          'lang-toggle': 'Cambiar idioma',
-          tagline: 'Ingeniero de software',
-          'contact-subtext': 'Abierto a colaborar y a nuevas oportunidades.',
-          'work-title': 'Trabajo',
-          'work-body':
-            'Soy ingeniero de software especializado en plataformas de trading y de analítica: desarrollo sistemas fiables donde el rendimiento, la integridad de los datos y la claridad para el usuario son prioritarios. Trabajo principalmente con TypeScript, React, Next.js, Go, PostgreSQL y herramientas modernas de despliegue.',
-          'personal-title': 'Fuera del trabajo',
-          'personal-body':
-            'En mi tiempo libre me gusta aprender idiomas y seguir curioso sobre cómo nos comunicamos. Creé <a href="https://linguatrackr.com" target="_blank" rel="noopener noreferrer">Linguatrackr</a> para hacer seguimiento de ese progreso. También uso Python cuando exploro datos o proyectos personales.',
-        },
-      };
-
-      const HTML_KEYS = new Set(['personal-body']);
-      const STORAGE_KEY = 'preferred-lang';
-
-      let currentLang = localStorage.getItem(STORAGE_KEY) || 'en';
-      if (!translations[currentLang]) currentLang = 'en';
-
-      const toggle = document.getElementById('languageToggle');
-      const langOptions = toggle.querySelectorAll('.lang-option');
-
-      function updateLanguage(lang) {
-        currentLang = lang;
-        localStorage.setItem(STORAGE_KEY, lang);
-
-        langOptions.forEach((option) => {
-          option.classList.toggle('active', option.dataset.lang === lang);
-        });
-
-        document.documentElement.lang = lang;
-
-        const strings = translations[lang];
-
-        document.querySelectorAll('[data-translate]').forEach((el) => {
-          const key = el.dataset.translate;
-          if (!strings[key]) return;
-          if (HTML_KEYS.has(key)) {
-            el.innerHTML = strings[key];
-          } else {
-            el.textContent = strings[key];
-          }
-        });
-
-        document.querySelectorAll('[data-translate-aria]').forEach((el) => {
-          const key = el.dataset.translateAria;
-          if (strings[key]) el.setAttribute('aria-label', strings[key]);
-        });
-      }
-
-      toggle.addEventListener('click', (e) => {
-        const clickedLang = e.target.dataset?.lang;
-        if (clickedLang && clickedLang !== currentLang) {
-          updateLanguage(clickedLang);
-        }
-      });
-
-      updateLanguage(currentLang);
-    </script>
   </body>
 </html>
